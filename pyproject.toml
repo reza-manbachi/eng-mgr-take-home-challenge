@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "eng-mgr-take-home-challenge"
+version = "0.1.0"
+description = ""
+authors = ["Reza M"]
+readme = "README.md"
+packages = [{include = "eng_mgr_take_home_challenge"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -80,6 +80,13 @@ curl --header "Content-Type: application/json" \
 
 a new `worked_hour` record is inserted into the database.
 
+## How to Run the API Project
+
+```
+python manage.py runserver 3000
+```
+This will run the application on localhost with port 3000
+
 
 ## Bonus Points
 
