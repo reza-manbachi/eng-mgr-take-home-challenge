@@ -1,16 +1,8 @@
-from rest_framework import generics, status
-from rest_framework.response import Response
-from .models.users import User
-from .models.worked_hours import WorkedHour
-from .serializers.users import UserSerializer
-from .serializers.worked_hours import WorkedHourSerializer
 from rest_framework.views import APIView
-
-
-class ActiveUsersListView(generics.ListAPIView):
-    queryset = User.objects.filter(active=True)
-    serializer_class = UserSerializer
-
+from rest_framework.response import Response
+from rest_framework import status
+from ..models.worked_hours import WorkedHour
+from ..serializers.worked_hours import WorkedHourSerializer
 
 class WorkedHoursView(APIView):
     serializer_class = WorkedHourSerializer

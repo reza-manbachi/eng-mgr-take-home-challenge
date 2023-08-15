@@ -1,3 +1,4 @@
-usersapp/.venv
+**/.venv
+**/.DS_Store
 usersapp/usersapp.egg-info
 **/__pycache__

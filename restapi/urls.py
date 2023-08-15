@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import path
-from .views import ActiveUsersListView, WorkedHoursView
+from .views.users_views import ActiveUsersListView
+from .views.worked_hours_views import WorkedHoursView
 
 urlpatterns = [
     path('admin/', admin.site.urls),

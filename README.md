@@ -1,16 +1,46 @@
-# SpotHero Engineering Manager Take-Home Challenge
+The take-home challenge description comes later in this readme file.
 
-[![App Build](https://github.com/spothero/eng-mgr-take-home-challenge/actions/workflows/app-build.yaml/badge.svg)](https://github.com/spothero/eng-mgr-take-home-challenge/actions/workflows/app-build.yaml)
+# How to Run the REST API Project
 
-This repo is a starter project for engineering manager candidates. It runs Postgres 13 in docker, has a database schema with two tables and seed data for both.
-
-## Installation
+## DB Dockerfile
 
 You need Docker to run this project. Please run `docker-compose up -d` to download the image and start the container, it will create the database, the tables and will add the seed data.
 We added a [Makefile](/Makefile) to the project for easier interaction. Run `make help` to see what commands are available for you.
 In case the `make` tool is not available on your operating system, open up the Makefile and copy/paste the commands from there.
 
 An easy way to look into the content of the database is by running `docker-compose exec db psql -U $(POSTGRES_USER) -d $(POSTGRES_DB)` (or executing the corresponding make command, `make docker.db-prompt`), that will provide the `psql` prompt, the command-line tool of PostgreSQL.
+
+## Python Requirements
+
+I encourage using virtual environment to contain the dependencies.
+
+```bash
+python3 -m venv .venv
+. .venv/bin/activate
+```
+
+The dependencies are listed in [requiements.txt](/requirements.txt) file. Install the requirements using:
+
+```bash
+pip install -r requirements.txt
+```
+
+You can run the application using the following command:
+
+```bash
+python manage.py runserver 3000
+```
+
+This will run the application on localhost with port `3000`
+
+Note: your DB docker container should be running before running the application.
+
+----
+# Engineering Manager Take-Home Challenge
+
+[![App Build](https://github.com/spothero/eng-mgr-take-home-challenge/actions/workflows/app-build.yaml/badge.svg)](https://github.com/spothero/eng-mgr-take-home-challenge/actions/workflows/app-build.yaml)
+
+This repo is a starter project for engineering manager candidates. It runs Postgres 13 in docker, has a database schema with two tables and seed data for both.
 
 ## Our Goals
 
@@ -79,13 +109,6 @@ curl --header "Content-Type: application/json" \
 ```
 
 a new `worked_hour` record is inserted into the database.
-
-## How to Run the API Project
-
-```
-python manage.py runserver 3000
-```
-This will run the application on localhost with port 3000
 
 
 ## Bonus Points
