@@ -25,6 +25,10 @@ The dependencies are listed in [requiements.txt](/requirements.txt) file. Instal
 pip install -r requirements.txt
 ```
 
+## Run the Application
+
+Make sure the DB docker container is running. If not, run `docker-compose up -d` that was mentioned above.
+
 You can run the application using the following command:
 
 ```bash
@@ -33,7 +37,11 @@ python manage.py runserver 3000
 
 This will run the application on localhost with port `3000`
 
-Note: your DB docker container should be running before running the application.
+To run the tests, use:
+```bash
+python manage.py test restapi
+```
+where `restapi` is the name of the project
 
 ----
 # Engineering Manager Take-Home Challenge
